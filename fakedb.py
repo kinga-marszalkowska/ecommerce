@@ -1,4 +1,4 @@
-from model import Product
+from Product_model import Product
 
 data = {
     1: Product(id=1, name="book", price="10", quantity="100", description="just a book", response_code=200),

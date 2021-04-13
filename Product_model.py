@@ -14,3 +14,16 @@ class Product(BaseModel):
 
     def to_string(self, pretty: bool = False):
         return self.name, self.price
+
+    def to_map(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "price": self.price,
+            "quantity": self.quantity,
+            "description": self.description
+
+        }
+
+
+
