@@ -9,9 +9,6 @@ class Product(BaseModel):
     quantity: int
     description: str
 
-    response_code: Optional[int] = None
-    error_message: Optional[str] = None
-
     def to_string(self, pretty: bool = False):
         return self.name, self.price
 

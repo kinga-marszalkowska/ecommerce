@@ -44,13 +44,14 @@ def update_product(product_id: int, product: Product):
 @app.delete("/products/{product_id}")
 def delete_product(product_id: int):
     data[product_id] = {}
+    #todo return 202?
 
 
 # todo 422 Unprocessable Entity error
 @app.put("/products/{product_id}")
 def subtract_quantity(product_id: int, quantity: int):
     if quantity > data[product_id].quantity:
-        return {"error": 405, "message": "cannot get that many elements"}
+        return {"error": 406, "message": "cannot get that many elements"}
     else:
         qty = data[product_id].quantity
         data[product_id].quantity = qty - quantity
@@ -75,7 +76,6 @@ def update_quantity(product_id: int, quantity: int, customer_id: int):
     pass
 
 # Customer
-
 
 
 if __name__ == "__main__":
